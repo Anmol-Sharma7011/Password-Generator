@@ -1,77 +1,59 @@
-# 🗂️ React Todo Application
+# 🔐 Password Generator App (React)
 
-A clean, responsive, and high-performance **Todo App** built with **React**, using the **Context API** for state management, complete **CRUD operations**, and **localStorage** for data persistence. This project demonstrates modular architecture, component reusability, and modern React practices.
+A fast, secure, and responsive **Password Generator** built with **React** that allows users to generate strong passwords with customizable options such as length, numbers, and special characters.
 
-🌐 **Live Demo** → [todo-react-app-by-anmol-sharma.vercel.app](https://todo-react-app-by-anmol-sharma.vercel.app/)
-
----
-
-## 📌 Key Features
-
-- ✅ Add, edit, delete, and mark todos as completed
-- ⚙️ Global state managed with **React Context API**
-- 💾 Persistent storage using **localStorage**
-- 🧠 Smart UI updates based on state
-- 💡 Clean code structure & reusable components
-- ⚡ Fully responsive & accessible
-- 🚀 Deployed using **Vercel**
+🚀 **Live Demo**: [Click to View](https://password-generator-hateswkej-anmol-sharma7011s-projects.vercel.app/)
 
 ---
 
-## 📁 Project Structure
+## ✨ Features
 
-src/
-├── components/
-│ ├── TodoForm.jsx # Input and form handling
-│ ├── TodoItem.jsx # Single todo item UI
-│ └── TodoList.jsx # Renders list of todos
-├── context/
-│ └── TodoContext.jsx # Context API logic
-├── App.jsx # Root component
-└── index.js # Entry point
-
+- 🔢 Set password length using a slider (8–25 characters)
+- 🔁 Choose to include **numbers** and/or **special characters**
+- 📋 Copy password to clipboard with a single click
+- 💡 Auto-generates new password on every change
+- 🎨 Beautiful and responsive UI using **Tailwind CSS**
+- ⚡ Instant password updates with `useEffect` and `useCallback`
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-| Technology     | Role                          |
-|----------------|-------------------------------|
-| React          | UI Library                    |
-| Context API    | Global state management       |
-| localStorage   | Persistent data storage       |
-| CSS / Tailwind | Styling (optional)            |
-| Vercel         | Deployment                    |
+| Tech            | Description                  |
+|-----------------|------------------------------|
+| React           | Front-end library             |
+| Hooks (`useState`, `useEffect`, `useCallback`, `useRef`) | For state & DOM logic |
+| Tailwind CSS    | Utility-first styling         |
+| Vercel          | Hosting platform              |
 
 ---
 
-## 🚀 Getting Started
+## 🧠 Code Highlights
 
-Clone the repository and run the app locally:
-
-```bash
-git clone https://github.com/your-username/todo-react-app.git
-cd todo-react-app
-npm install
-npm start
+```jsx
+useEffect(() => {
+  passwordGenerator();
+}, [length, numberAllowed, charAllowed, passwordGenerator]);
+const copyPasswordToClipboard = () => {
+  passwordRef.current?.select();
+  navigator.clipboard.writeText(password);
+};
 ```
+Copies password directly to user's clipboard.
 
-🧠 How It Works
-TodoContext provides a global state for all components.
+📂 Project Structure
+src/
+├── App.jsx           # Main component with logic
+├── App.css           # Tailwind & custom styling
+└── index.js          # Entry point
 
-State updates are handled via context provider functions.
-
-All todos are saved to and retrieved from localStorage automatically.
+🧑‍💻 Author
+Anmol Sharma
+🔗 Live Project
 
 📄 License
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License.
 
-🙋‍♂️ Author
-Developed by Anmol Sharma
-🔗 Live App
-
-⭐️ Feedback & Contributions
-If you find this project useful, consider giving it a ⭐️.
-Contributions, issues, and feature requests are welcome!
-
-Made with ❤️ love by Anmol Sharma!
+🙌 Feedback
+If you find this project useful or cool, leave a ⭐ on GitHub!
+Contributions, ideas, and improvements are always welcome.
